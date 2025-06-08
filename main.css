@@ -17,6 +17,7 @@ body {
     background: var(--background);
     color: var(--text-color);
     font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
     font-size: small;
     font-weight: 400;
     
@@ -111,12 +112,6 @@ button {
     min-width: 45rem;
 }
 
-@media (max-width: 950px) {
-    .content-layout { 
-        min-width: 90%;
-    }
-}
-
 .cursor-blink {
     &::after {
         content: " ";
@@ -207,4 +202,18 @@ button {
 
 body:has(> .crt) > *:not(.crt) {
   animation: crtBlur 1s infinite;
+}
+
+@media (max-width: 1000px) {
+    .content-layout { 
+        min-width: 90%;
+    }
+
+    body {
+        font-size: larger;
+    }
+
+    button {
+        font-size: x-large;
+    }
 }
