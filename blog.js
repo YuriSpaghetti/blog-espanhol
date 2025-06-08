@@ -2,7 +2,7 @@
 
 /** @returns {ArticleMetada[]} */
 async function getMetadata() {
-	return await fetch("/content/metadata.json").then(r => r.json());
+	return await fetch("content/metadata.json").then(r => r.json());
 }
 
 async function loadHomePage() {
