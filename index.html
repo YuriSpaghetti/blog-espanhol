@@ -7,6 +7,7 @@
         <script src="blog.js"></script>
     </head>
     <body>
+        <div class="crt"></div>
         <nav id="navbar"></nav>
 
         <div class="content-layout">
@@ -21,14 +22,13 @@
 
                 <hr style="margin-bottom: 4rem; margin-top: 4rem;">
 
-                <div id="article-socket">
-                    
-                </div>
+                <h1>Artículos</h1>
+                <div id="article-socket" style="display: flex; flex-direction: column; gap: 1em;"></div>
             </div>
         </div>
 
         <template id="template-article-card">
-            <div class="article-card">
+            <div class="article-card text-nomargin">
                 <h1>{{title}}</h1>
                 <p>{{publication}} {{author}}</p>
                 <div style="display: flex; justify-content: start; gap: 1em; margin-top: 1em; font-style: italic;">
@@ -36,7 +36,7 @@
                         <p style="font-weight: bold; color: var(--text-color-subtle);">#{{this}}</p>
                     {{/each}}
                 </div>
-                <hr>
+                <hr style="margin-top: 12px;">
                 <p style="margin-left: 2rem; margin-right: 12px;">
                     {{description}}
                 </p>

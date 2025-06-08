@@ -7,5 +7,14 @@
     "author": ["Yuri B."],
     "rel": "content/290525.md",
     "tags": ["programming", "js", "languages", "spanish"]
+  },
+  {
+    "id": "2",
+    "title": "¡El primer artículo que se escribe aquí!",
+    "description": "Os hablo un poco del blog y como lo hice.",
+    "publication": 1749419184,
+    "author": ["Yuri B."],
+    "rel": "content/290525-ES.md",
+    "tags": ["programming", "js", "languages", "spanish"]
   }
 ]

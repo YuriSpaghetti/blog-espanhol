@@ -6,7 +6,10 @@ async function getMetadata() {
 }
 
 async function loadHomePage() {
-	const metadata = await getMetadata();
+	let metadata = await getMetadata();
+	metadata = metadata.sort(
+		(a, b) =>  {return b.publication - a.publication}
+	);
 
 	const articleCardTemplate = Handlebars.compile(document.querySelector("#template-article-card").innerHTML)
 	const articleCardSlot = document.querySelector("#article-socket")

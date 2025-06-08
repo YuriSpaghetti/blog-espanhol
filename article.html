@@ -17,12 +17,14 @@
     </head>
 
     <body>
+        <div class="crt"></div>
+        
         <button onclick="history.back()">Back</button>
         <nav id="navbar"></nav>
 
-        <div class="content-layout" style="padding-bottom: 4em;">
-            <article id="article" class="article-card" style="padding-bottom: 4em;">
-                <div>
+        <div class="content-layout">
+            <article id="article" class="article-card">
+                <div class="text-nomargin">
                     <h1>{{title}}</h1>
                     <p>{{publication}} {{author}}</p>
                     <div style="display: flex; justify-content: start; gap: 1em; margin-top: 1em; font-style: italic;">
@@ -31,7 +33,7 @@
                         {{/each}}
                     </div>
                 </div>
-                <hr style="margin-bottom: 3em;">
+                <hr style="margin-top: 12px;">
                 <div>
                     {{{content}}}
                 </div>
