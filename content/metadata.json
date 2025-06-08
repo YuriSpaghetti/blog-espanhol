@@ -1,10 +1,11 @@
 [
   {
-    "title": "El Acertijo de numero uno",
-    "description": "Short little description to introduce the blog.",
+    "id": "1",
+    "title": "The First article to be written here!",
+    "description": "I talk a little about the blog and how I made it.",
     "publication": 1748530527,
     "author": ["Yuri B."],
-    "rel": "/content/290525.md",
+    "rel": "content/290525.md",
     "tags": ["programming", "js", "languages", "spanish"]
   }
 ]

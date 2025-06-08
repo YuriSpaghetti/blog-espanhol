@@ -1,2 +1,42 @@
-// this should render the article matching the article param in the url. Thefore
-allowing the blog to work.
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css" />
+        <script type="module" src="lib/marked.min.js"></script>
+        <script src="lib/handlebars.js"></script>
+        <script src="blog.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+        <!-- and it's easy to individually load additional languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/handlebars.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/javascript.min.js"></script>
+
+        <script defer>loadArticle()</script>
+    </head>
+
+    <body>
+        <button onclick="history.back()">Back</button>
+        <nav id="navbar"></nav>
+
+        <div class="content-layout" style="padding-bottom: 4em;">
+            <article id="article" class="article-card" style="padding-bottom: 4em;">
+                <div>
+                    <h1>{{title}}</h1>
+                    <p>{{publication}} {{author}}</p>
+                    <div style="display: flex; justify-content: start; gap: 1em; margin-top: 1em; font-style: italic;">
+                        {{#each tags}}
+                            <p style="font-weight: bold; color: var(--text-color-subtle);">#{{this}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+                <hr style="margin-bottom: 3em;">
+                <div>
+                    {{{content}}}
+                </div>
+            </article>
+        </div>
+    </body>
+
+</html>

@@ -3,63 +3,51 @@
     <head>
         <link rel="stylesheet" href="main.css" />
         <script type="module" src="lib/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="blog.js"></script>
     </head>
     <body>
-        <div style="display: flex; justify-content: center">
-            <div class="block header">
-                <ul style="display: flex; gap: 16px">
-                    <li>
-                        <a href="/home">HOME</a>
-                    </li>
-                    <li>
-                        <a href="/about">about</a>
-                    </li>
-                    <li>
-                        <a href="/articles">ARTICLES</a>
-                    </li>
-                </ul>
+        <nav id="navbar"></nav>
 
-                <h1
-                    class="cursor-blink"
-                    style="
-                        width: fit-content;
-                        margin: 0px;
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        margin-right: 1rem;
-                    "
-                >
-                    XPN0L
-                </h1>
-            </div>
-        </div>
+        <div class="content-layout">
+                <article>
+                    <h1 style="color: var(--accent);">Bienvenido!</h1>
+                    <p>
+                        <b>Hola!</b> este es mi blog que hice para una tarea de
+                        español, a continuación se muestran los artículos
+                        enumerados en orden de publicación.
+                    </p>
+                </article>
 
-        <div style="display: flex; justify-content: center; margin: 2em">
-                <div id="main-track">
-                    <article>
-                        <h1>Bienvenido!</h1>
-                        <p>
-                            Hola, este es mi blog que hice para una tarea de
-                            español, a continuación se muestran los artículos
-                            enumerados en orden de publicación.
-                        </p>
-                    </article>
-                    <div id="layout-grid"></div>
-                </div>
+                <hr style="margin-bottom: 4rem; margin-top: 4rem;">
 
-                <div style="display: flex">
-                    <div class="article-card">
-                        <div>
-                            BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-                            BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-                            BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
-                            BLAH BLAH BLAH BLAH BLAH BLAH
-                        </div>
-                    </div>
+                <div id="article-socket">
+                    
                 </div>
             </div>
         </div>
 
-        <script type="module" src="blog.js"></script>
+        <template id="template-article-card">
+            <div class="article-card">
+                <h1>{{title}}</h1>
+                <p>{{publication}} {{author}}</p>
+                <div style="display: flex; justify-content: start; gap: 1em; margin-top: 1em; font-style: italic;">
+                    {{#each tags}}
+                        <p style="font-weight: bold; color: var(--text-color-subtle);">#{{this}}</p>
+                    {{/each}}
+                </div>
+                <hr>
+                <p style="margin-left: 2rem; margin-right: 12px;">
+                    {{description}}
+                </p>
+
+                <button 
+                    style="margin-top: 2em;"
+                    onclick="window.location.href = 'article?id={{id}}'"
+                >Read More... →</button>
+            </div>
+        </template>
+        
+        <script defer>loadHomePage()</script>
     </body>
 </html>

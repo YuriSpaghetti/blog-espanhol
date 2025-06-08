@@ -1,4 +1,7 @@
 type ArticleMetada = {
+  /** unique identifier */
+  id: number;
+
   author: string[];
   title: string;
   description: string[];
