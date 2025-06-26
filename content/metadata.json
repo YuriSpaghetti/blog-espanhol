@@ -16,5 +16,14 @@
     "author": ["Yuri B."],
     "rel": "content/290525-ES.md",
     "tags": ["programming", "js", "languages", "spanish"]
+  },
+  {
+    "id": "3",
+    "title": "La Gincana de la ETEP.",
+    "description": "Si.",
+    "publication": 1750947641,
+    "author": ["Yuri B."],
+    "rel": "content/260625.md",
+    "tags": ["spanish", "ETEP", "school"]
   }
 ]
